@@ -1,1 +1,1 @@
-module.exports = { production: false };
+module.exports = { production: false, port: 3000 };

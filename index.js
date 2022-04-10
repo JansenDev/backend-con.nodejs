@@ -1,35 +1,17 @@
-console.log('hello world');
 const express = require('express');
+
 const config = require('./config/config');
+const routes = require('./routes');
 
 const app = express();
-const port = 3000;
+const port = config.port || 3000;
+
+app.use(express.json());
+
+routes(app);
 
 app.get('/', (req, res, next) => {
   res.send('Hello world');
-});
-app.get('/products', (req, res, next) => {
-  res.send([
-    {
-      product: 1,
-      name: 'leche',
-    },
-    {
-      product: 2,
-      name: 'arroz',
-    },
-  ]);
-});
-
-app.get('/products/:idProduct', (req, res, next) => {
-  const { idProduct } = req.params;
-
-  console.log('idProduct');
-  console.log(idProduct);
-  res.send({
-    product: 2,
-    name: 'arroz',
-  });
 });
 
 app.listen(port, () => {

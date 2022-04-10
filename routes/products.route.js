@@ -25,10 +25,7 @@ router.get('/:idProduct', (req, res, next) => {
 
     res.send(product);
   } catch (error) {
-    res.status(404).send({
-      message: error.message,
-      data: {},
-    });
+    next(error);
   }
 });
 

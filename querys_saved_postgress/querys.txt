@@ -1,0 +1,46 @@
+
+//create table
+create table tasks(
+id serial primary key,
+	title varchar(255) not null,
+	completed boolean default false
+);
+
+// insert multiple values
+insert into tasks(title) values
+( 'tarea 4'),
+( 'tarea 5'),
+( 'tarea 6'),
+( 'tarea 7'),
+( 'tarea 8')
+
+
+//delete all rows
+delete from tasks
+
+// delete rows where
+delete from tasks
+where id >=5
+
+
+// delete multiple rows
+delete from tasks
+where id in (4,5)
+
+// retuning deleted values
+delete from tasks
+where id in (1,2)
+returning (id,title, completed | *)
+
+
+// get count rows
+select count(*) from tasks;
+
+//update row
+# UPDATE products SET locked_by_id = 1 WHERE id IN (...PREFETCHED IDS...);
+
+
+
+// pg admins shorctus
+
+ctrl+U  toggle mayus/ minus

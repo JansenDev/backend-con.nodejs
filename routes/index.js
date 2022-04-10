@@ -9,7 +9,7 @@ function routesInit(app) {
   app.use('/api/v1', router);
 
   router.use('/products', productsRoutes);
-  router.use('/user', userRoutes);
+  router.use('/users', userRoutes);
   router.use('/categories', categoriesRoutes);
 }
 
